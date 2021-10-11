@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-demo
+  namespace: flux-system
+spec:
+  interval: 30s
+  ref:
+    branch: main
+  # To learn how to checkout private repositories, check
+  # https://fluxcd.io/docs/components/source/gitrepositories/#spec-examples
+  url: https://github.com/giantswarm/flux-demo
+  timeout: 30s
