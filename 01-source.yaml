@@ -4,7 +4,7 @@ metadata:
   name: flux-demo
   namespace: flux-system
 spec:
-  interval: 30s
+  interval: 30s # How often Flux checks for repository updates (new commits)
   ref:
     branch: main
   # To learn how to checkout private repositories, check
