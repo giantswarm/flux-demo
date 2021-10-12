@@ -5,3 +5,11 @@ metadata:
   name: flux-demo
 spec: {}
 status: {}
+---
+apiVersion: security.giantswarm.io/v1alpha1
+kind: Organization
+metadata:
+  creationTimestamp: null
+  name: flux-demo-dev
+spec: {}
+status: {}
