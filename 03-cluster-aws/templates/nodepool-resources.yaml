@@ -1,0 +1,72 @@
+# Generated with:
+# kubectl gs template nodepool --provider aws --cluster-name demo0 --description demo0 --organization flux-demo --availability-zones 1
+# Changes:
+# - non-default namespace for all resources
+# - Helm hooks for Cluster CR
+apiVersion: cluster.x-k8s.io/v1alpha3
+kind: MachineDeployment
+metadata:
+  annotations:
+    giantswarm.io/docs: https://docs.giantswarm.io/ui-api/management-api/crd/machinedeployments.cluster.x-k8s.io/
+  creationTimestamp: null
+  labels:
+    helm.sh/hook: post-install
+    cluster-operator.giantswarm.io/version: ""
+    cluster.x-k8s.io/cluster-name: {{ .Values.clusterid }}
+    giantswarm.io/cluster: {{ .Values.clusterid }}
+    giantswarm.io/machine-deployment: u6h0f
+    giantswarm.io/organization: {{ .Values.organization }}
+    release.giantswarm.io/version: ""
+  name: u6h0f
+  namespace: {{ .Values.namespace }}
+spec:
+  clusterName: {{ .Values.clusterid }}
+  selector: {}
+  template:
+    metadata: {}
+    spec:
+      bootstrap: {}
+      clusterName: {{ .Values.clusterid }}
+      infrastructureRef:
+        apiVersion: infrastructure.giantswarm.io/v1alpha3
+        kind: AWSMachineDeployment
+        name: u6h0f
+        namespace: {{ .Values.namespace }}
+status: {}
+---
+apiVersion: infrastructure.giantswarm.io/v1alpha3
+kind: AWSMachineDeployment
+metadata:
+  annotations:
+    giantswarm.io/docs: https://docs.giantswarm.io/ui-api/management-api/crd/awsmachinedeployments.infrastructure.giantswarm.io/
+  creationTimestamp: null
+  labels:
+    helm.sh/hook: post-install
+    aws-operator.giantswarm.io/version: ""
+    giantswarm.io/cluster: {{ .Values.clusterid }}
+    giantswarm.io/machine-deployment: u6h0f
+    giantswarm.io/organization: {{ .Values.organization }}
+    release.giantswarm.io/version: ""
+  name: u6h0f
+  namespace: {{ .Values.namespace }}
+spec:
+  nodePool:
+    description: {{ .Values.clusterid }}
+    machine:
+      dockerVolumeSizeGB: 100
+      kubeletVolumeSizeGB: 100
+    scaling:
+      max: 10
+      min: 3
+  provider:
+    availabilityZones:
+    - "1"
+    instanceDistribution:
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 100
+    worker:
+      instanceType: m5.xlarge
+      useAlikeInstanceTypes: false
+status:
+  provider:
+    worker: {}
