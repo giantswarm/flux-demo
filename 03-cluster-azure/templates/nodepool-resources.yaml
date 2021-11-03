@@ -1,5 +1,5 @@
 # Generated with:
-# kubectl gs template nodepool --provider azure --cluster-name demo0 --description demo0 --organization flux-demo --availability-zones 1
+# kubectl gs template nodepool --provider azure --cluster-name demo0 --description demo0 --organization flux-demo
 # Changes:
 # - Helm hooks for Cluster CR
 apiVersion: exp.infrastructure.cluster.x-k8s.io/v1alpha3
