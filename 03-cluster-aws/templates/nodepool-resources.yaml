@@ -1,5 +1,5 @@
 # Generated with:
-# kubectl gs template nodepool --provider aws --cluster-name demo0 --description demo0 --organization flux-demo --availability-zones 1
+# kubectl gs template nodepool --provider aws --cluster-name demo0 --description demo0 --organization flux-demo --availability-zones eu-west-1a
 # Changes:
 # - non-default namespace for all resources
 # - Helm hooks for Cluster CR
@@ -60,7 +60,7 @@ spec:
       min: 3
   provider:
     availabilityZones:
-    - "1"
+    - "eu-west-1a"
     instanceDistribution:
       onDemandBaseCapacity: 0
       onDemandPercentageAboveBaseCapacity: 100
