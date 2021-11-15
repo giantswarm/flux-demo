@@ -1,0 +1,26 @@
+# Generated with:
+# kubectl gs template app --cluster demo0 --catalog giantswarm --name flux-app --namespace flux-system --version 0.4.0
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  name: kubeflow
+  namespace: y8u2z
+spec:
+  catalog: machine-learning
+  kubeConfig:
+    inCluster: false
+  name: kubeflow
+  namespace: default
+  version: 0.1.0
+  userConfig:
+    configMap:
+      name: kubeflow-user-values
+      namespace: y8u2z
+--- 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubeflow-user-values
+  namespace: y8u2z
+data:
+  values: ""
