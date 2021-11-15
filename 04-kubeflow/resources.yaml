@@ -23,4 +23,16 @@ metadata:
   name: kubeflow-user-values
   namespace: y8u2z
 data:
-  values: ""
+  values: |
+    type: github
+    id: customer
+    name: GithubTemp for Kubeflow demo
+    connectorConfig:
+      clientID: 65349349b0d2d081f802
+      clientSecret: 79c2-not-real-0f7b3617f649a1
+      loadAllGroups: false
+      orgs:
+      - name: giantswarm
+        teams:
+        - "data-scientists"
+      redirectURI: https://dex.g8s.gauss.eu-west-1.aws.giantswarm.io/callback
