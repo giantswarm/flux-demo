@@ -1,5 +1,5 @@
 # Generated with:
-# kubectl gs template app --cluster demo0 --catalog giantswarm --name flux-app --namespace flux-system --version 0.4.0
+# kubectl gs template app --cluster demo0 --catalog giantswarm --name flux-app --namespace default --version 0.4.0
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
@@ -10,5 +10,5 @@ spec:
   kubeConfig:
     inCluster: false
   name: flux-app
-  namespace: flux-system
+  namespace: default
   version: 0.4.0
