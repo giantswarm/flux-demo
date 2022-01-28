@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: flux-demo-development
-  namespace: flux-system
+  namespace: default
 spec:
   interval: 30s
   ref:
