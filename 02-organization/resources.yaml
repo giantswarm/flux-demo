@@ -2,6 +2,6 @@ apiVersion: security.giantswarm.io/v1alpha1
 kind: Organization
 metadata:
   creationTimestamp: null
-  name: flux-demo
+  name: piontec-flux-demo
 spec: {}
 status: {}
