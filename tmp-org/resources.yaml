@@ -1,7 +1,14 @@
-apiVersion: security.giantswarm.io/v1alpha1
-kind: Organization
+# Generated with:
+# kubectl gs template app --cluster demo0 --catalog giantswarm --name flux-app --namespace default --version 0.4.0
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
 metadata:
-  creationTimestamp: null
-  name: piontec-flux-tmp-org
-spec: {}
-status: {}
+  name: flux-app
+  namespace: demo0
+spec:
+  catalog: giantswarm
+  kubeConfig:
+    inCluster: false
+  name: flux-app
+  namespace: default
+  version: 0.4.0
