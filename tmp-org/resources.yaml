@@ -4,5 +4,4 @@ data:
 kind: ConfigMap
 metadata:
   name: flux-test-cm
-  namespace: default
 

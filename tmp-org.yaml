@@ -1,8 +1,8 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: tmp-org-kustomization
-  namespace: default
+  name: tmp-org-resource
+  namespace: org-piontec-flux-demo
 spec:
   interval: 30s
   path: ./tmp-org
