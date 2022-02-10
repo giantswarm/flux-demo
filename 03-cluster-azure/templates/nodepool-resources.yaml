@@ -47,8 +47,6 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   clusterName: {{ .Values.clusterid }}
-  failureDomains:
-  - "1"
   replicas: 3
   template:
     metadata: {}

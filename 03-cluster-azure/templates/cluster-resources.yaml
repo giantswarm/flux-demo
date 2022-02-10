@@ -1,5 +1,5 @@
 # Generated with:
-# kubectl gs template cluster --provider azure --name demo0 --organization flux-demo --description flux-demo --release v16.0.2
+# kubectl gs template cluster --provider azure --name demo0 --organization flux-demo --description flux-demo --release v16.1.2
 # Changes:
 # - Helm hooks for Cluster CR
 apiVersion: infrastructure.cluster.x-k8s.io/v1alpha3
@@ -10,7 +10,7 @@ metadata:
     cluster.x-k8s.io/cluster-name: {{ .Values.clusterid }}
     giantswarm.io/cluster: {{ .Values.clusterid }}
     giantswarm.io/organization: {{ .Values.organization }}
-    release.giantswarm.io/version: 16.0.2
+    release.giantswarm.io/version: 16.1.2
   name: {{ .Values.clusterid }}
   namespace: {{ .Values.namespace }}
 spec:
@@ -43,7 +43,7 @@ metadata:
     cluster.x-k8s.io/cluster-name: {{ .Values.clusterid }}
     giantswarm.io/cluster: {{ .Values.clusterid }}
     giantswarm.io/organization: {{ .Values.organization }}
-    release.giantswarm.io/version: 16.0.2
+    release.giantswarm.io/version: 16.1.2
   name: {{ .Values.clusterid }}
   namespace: {{ .Values.namespace }}
 spec:
@@ -68,7 +68,7 @@ metadata:
     cluster.x-k8s.io/control-plane: "true"
     giantswarm.io/cluster: {{ .Values.clusterid }}
     giantswarm.io/organization: {{ .Values.organization }}
-    release.giantswarm.io/version: 16.0.2
+    release.giantswarm.io/version: 16.1.2
   name: {{ .Values.clusterid }}-master-0
   namespace: {{ .Values.namespace }}
 spec:
