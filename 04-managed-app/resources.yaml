@@ -4,7 +4,7 @@ apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
   name: flux-app
-  namespace: n3j4x
+  namespace: v8j2h
 spec:
   catalog: giantswarm
   kubeConfig:
