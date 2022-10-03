@@ -20,9 +20,6 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  annotations:
-    helm.sh/hook: pre-install
-    helm.sh/hook-weight: "-1"
   labels:
     giantswarm.io/cluster: {{ .Values.clusterid }}
   name: {{ .Values.clusterid }}-userconfig
@@ -67,9 +64,6 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  annotations:
-    helm.sh/hook: pre-install
-    helm.sh/hook-weight: "-1"
   labels:
     giantswarm.io/cluster: {{ .Values.clusterid }}
   name: {{ .Values.clusterid }}-default-apps-userconfig
