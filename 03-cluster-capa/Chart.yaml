@@ -2,4 +2,4 @@ apiVersion: v1
 name: flux-demo-capa-cluster
 home: https://github.com/giantswarm/flux-demo
 description: ""
-version: v1.0.2
+version: v1.0.3
