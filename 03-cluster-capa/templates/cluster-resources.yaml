@@ -12,7 +12,7 @@ data:
     - instanceType: {{ .Values.instancetype }}
       maxSize: {{ .Values.maxpoolsize }}
       minSize: {{ .Values.minpoolsize }}
-      name: machine-pool0
+      name: {{ .Values.machinepoolname }}
       rootVolumeSizeGB: {{ .Values.rootVolumeSizeGB }}
     network:
       availabilityZoneUsageLimit: 3

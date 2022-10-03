@@ -5,5 +5,6 @@ description: flux-capa-demo
 instancetype: m5.large
 rootVolumeSizeGB: 300G
 controlplanereplicas: 3
+machinepoolname: machine-pool0
 minpoolsize: 3
 maxpoolsize: 10
