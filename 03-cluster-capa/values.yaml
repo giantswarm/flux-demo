@@ -1,0 +1,9 @@
+clusterid: capa0
+organization: carillan
+namespace: org-carillan
+description: flux-capa-demo
+instancetype: m5.large
+rootVolumeSizeGB: 300G
+controlplanereplicas: 3
+minpoolsize: 3
+maxpoolsize: 10
