@@ -1,0 +1,101 @@
+---
+apiVersion: v1
+data:
+  values: |
+    aws: {}
+    bastion: {}
+    clusterDescription: {{ .Values.description }}
+    clusterName: {{ .Values.clusterid }}
+    controlPlane:
+      replicas: {{ .Values.controlplanereplicas }}
+    machinePools:
+    - instanceType: {{ .Values.instancetype }}
+      maxSize: {{ .Values.maxpoolsize }}
+      minSize: {{ .Values.minpoolsize }}
+      name: {{ .Values.machinepoolname }}
+      rootVolumeSizeGB: {{ .Values.rootVolumeSizeGB }}
+    network:
+      availabilityZoneUsageLimit: 3
+    organization: {{ .Values.organization }}
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    giantswarm.io/cluster: {{ .Values.clusterid }}
+  name: {{ .Values.clusterid }}-userconfig
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+  name: {{ .Values.clusterid }}
+  namespace: {{ .Values.namespace }}
+spec:
+  catalog: cluster
+  config:
+    configMap:
+      name: ""
+      namespace: ""
+    secret:
+      name: ""
+      namespace: ""
+  kubeConfig:
+    context:
+      name: ""
+    inCluster: true
+    secret:
+      name: ""
+      namespace: ""
+  name: cluster-aws
+  namespace: {{ .Values.namespace }}
+  userConfig:
+    configMap:
+      name: {{ .Values.clusterid }}-userconfig
+      namespace: {{ .Values.namespace }}
+  version: 0.9.2
+---
+apiVersion: v1
+data:
+  values: |
+    clusterName: {{ .Values.clusterid }}
+    organization: {{ .Values.organization }}
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    giantswarm.io/cluster: {{ .Values.clusterid }}
+  name: {{ .Values.clusterid }}-default-apps-userconfig
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+  name: {{ .Values.clusterid }}-default-apps
+  namespace: {{ .Values.namespace }}
+spec:
+  catalog: cluster
+  config:
+    configMap:
+      name: ""
+      namespace: ""
+    secret:
+      name: ""
+      namespace: ""
+  kubeConfig:
+    context:
+      name: ""
+    inCluster: true
+    secret:
+      name: ""
+      namespace: ""
+  name: default-apps-aws
+  namespace: {{ .Values.namespace }}
+  userConfig:
+    configMap:
+      name: {{ .Values.clusterid }}-default-apps-userconfig
+      namespace: {{ .Values.namespace }}
+  version: 0.5.4
