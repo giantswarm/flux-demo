@@ -31,9 +31,6 @@ metadata:
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
-  annotations:
-    helm.sh/hook: pre-install
-    helm.sh/hook-weight: "-1"
   labels:
     app-operator.giantswarm.io/version: 0.0.0
   name: {{ .Values.clusterid }}
@@ -81,9 +78,6 @@ metadata:
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
-  annotations:
-    helm.sh/hook: pre-install
-    helm.sh/hook-weight: "-1"
   labels:
     app-operator.giantswarm.io/version: 0.0.0
   name: {{ .Values.clusterid }}-default-apps
