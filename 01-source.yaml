@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 30s # How often Flux checks for repository updates (new commits)
   ref:
-    branch: main
+    branch: update
   # To learn how to checkout private repositories, check
   # https://fluxcd.io/docs/components/source/gitrepositories/#spec-examples
   url: https://github.com/giantswarm/flux-demo
